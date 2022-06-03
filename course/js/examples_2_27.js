@@ -28,3 +28,8 @@ console.log(sayHello("Sergei"));
 console.log(returnNeighboringNumbers(6));
 console.log(getMathResult(6, 4));
 console.log(getMathResult(6, 'H'));
+
+const text = "Hello, my friend, i'm glad to see you";
+const searchText = "my friend";
+
+console.log(text.substr(text.indexOf(searchText), searchText.length));
