@@ -41,6 +41,7 @@ function isBudgetEnough(data) {
 const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Sanya'];
 
 function sortStudentsByGroups(arr) {
+    arr.sort();
     let otherStudents = "Оставшиеся студенты: ";
     let studentsByGroups = [];
     let countOtherStudents = arr.length % 3;
