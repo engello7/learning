@@ -55,3 +55,20 @@ function findMaxNumber(a, b, c, d) {
         return max;
     }
 }
+
+//Необходимо решить без применения рекурсии
+function fib(count) {
+    if (typeof(count) !== 'number' || !Number.isInteger(count) || count < 1) {
+        return "";
+    }
+    let a = 0;
+    let b = 1;
+    let result = "0";
+    for (let i = 1; i < count; i++) {
+        let sum = a + b;
+        result += ` ${b}`;
+        a = b;
+        b = sum;
+    }
+    return result;
+} 
