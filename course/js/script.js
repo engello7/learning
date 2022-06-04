@@ -2,10 +2,10 @@
 let numberOfFilms;
 
 function start() {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0");
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0").trim();
 
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0");
+        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "0").trim();
     }
     personalMovieDB.count = numberOfFilms;
 }
@@ -20,15 +20,15 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        let lastFilm = prompt("Один из последних просмотренных фильмов?", "");
+        let lastFilm = prompt("Один из последних просмотренных фильмов?", "").trim();
         while (lastFilm == null || lastFilm == '' || lastFilm.length > 50) {
             alert("Введено некорректное значение");
-            lastFilm = prompt("Один из последних просмотренных фильмов?", "");
+            lastFilm = prompt("Один из последних просмотренных фильмов?", "").trim();
         }
-        let rating = +prompt("На сколько оцените его от 1 до 10?", "7");
+        let rating = +prompt("На сколько оцените его от 1 до 10?", "7").trim();
         while (rating == null || isNaN(rating) || rating == '' || rating > 10 || rating < 1) {
             alert("Введено некорректное значение");
-            rating = +prompt("На сколько оцените его от 1 до 10?", "7");
+            rating = +prompt("На сколько оцените его от 1 до 10?", "7").trim();
         }
         personalMovieDB.movies[lastFilm] = rating;
     }
@@ -36,10 +36,10 @@ function rememberMyFilms() {
 
 function writeYourGenres() {
     for (let i = 1; i <= 3; i++) {
-        let newGenre = prompt(`Ваш любимый жанр под номером ${i}`);
+        let newGenre = prompt(`Ваш любимый жанр под номером ${i}`).trim();
         while (newGenre == null || newGenre == '' || newGenre.length > 20) {
             alert("Введено некорректное значение");
-            newGenre = prompt(`Ваш любимый жанр под номером ${i}`);
+            newGenre = prompt(`Ваш любимый жанр под номером ${i}`).trim();
         }
         personalMovieDB.genres[i-1] = newGenre;
     }
